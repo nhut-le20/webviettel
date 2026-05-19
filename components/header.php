@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?php echo e(APP_DESCRIPTION); ?>">
-    <meta name="theme-color" content="#EE0033">
+    <meta name="theme-color" content="#ED1B2F">
     <title><?php echo e($pageTitle); ?></title>
     <link rel="preload" href="<?php echo e(asset('css/variables.css')); ?>" as="style">
     <link rel="stylesheet" href="<?php echo e(asset('css/variables.css')); ?>">

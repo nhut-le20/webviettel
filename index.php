@@ -13,7 +13,7 @@ $routes = [
     'blog' => 'pages/blog.php',
 ];
 
-$page = $_GET['page'] ?? 'home';
+$page = isset($_GET['page']) ? trim((string) $_GET['page']) : 'home';
 $currentPage = array_key_exists($page, $routes) ? $page : 'home';
 $pageFile = __DIR__ . '/' . $routes[$currentPage];
 $pageNames = [

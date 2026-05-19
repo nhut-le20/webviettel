@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var next = slider.querySelector('[data-slide-next]');
     var activeIndex = 0;
 
+    if (slides.length === 0) {
+        return;
+    }
+
     function showSlide(index) {
         activeIndex = (index + slides.length) % slides.length;
         slides.forEach(function (slide, slideIndex) {
@@ -29,4 +33,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-

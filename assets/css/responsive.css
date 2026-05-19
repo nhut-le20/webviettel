@@ -84,6 +84,12 @@
     .video-banner {
         min-height: auto;
     }
+
+    .admin-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+    }
 }
 
 @media (max-width: 560px) {
@@ -97,6 +103,18 @@
 
     .nav-wrap {
         min-height: 68px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand-mark {
+        font-size: 30px;
+    }
+
+    .brand-label {
+        display: none;
     }
 
     .primary-nav {
@@ -137,7 +155,7 @@
 
     .dashboard-mockup {
         padding: 12px;
-        border-radius: 20px;
+        border-radius: var(--radius-lg);
     }
 
     .mockup-grid {

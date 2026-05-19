@@ -7,8 +7,8 @@
             <div class="contact-methods">
                 <a href="tel:18008098">Hotline: <?php echo e(CONTACT_PHONE); ?></a>
                 <a href="mailto:<?php echo e(CONTACT_EMAIL); ?>">Email: <?php echo e(CONTACT_EMAIL); ?></a>
-                <a href="#" aria-label="Mở Zalo chat">Chat Zalo</a>
-                <a href="#" aria-label="Mở Facebook chat">Facebook</a>
+                <a href="https://zalo.me/18008098" target="_blank" rel="noopener" aria-label="Mở Zalo chat">Chat Zalo</a>
+                <a href="mailto:<?php echo e(CONTACT_EMAIL); ?>" aria-label="Gửi email tư vấn">Email tư vấn</a>
             </div>
             <div class="map-placeholder" role="img" aria-label="Vị trí công ty trên bản đồ">
                 <span><?php echo e(CONTACT_ADDRESS); ?></span>
