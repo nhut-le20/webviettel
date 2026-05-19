@@ -10,7 +10,7 @@
                 <span class="icon-badge icon-<?php echo e($service['icon']); ?>" aria-hidden="true"></span>
                 <h3><?php echo e($service['title']); ?></h3>
                 <p><?php echo e($service['description']); ?></p>
-                <a class="text-link" href="<?php echo e(APP_URL); ?>/contact">Xem chi tiết</a>
+                <a class="text-link" href="<?php echo e(appUrl('contact')); ?>">Xem chi tiết</a>
             </article>
         <?php endforeach; ?>
     </div>

@@ -3,27 +3,27 @@
 require_once __DIR__ . '/../includes/session.php';
 requireAdmin();
 
+$adminTitle = 'Dashboard';
+$activeAdminPage = 'dashboard';
+
 ?>
-<!doctype html>
-<html lang="vi">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/variables.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-</head>
-<body>
-<main class="section">
-    <div class="container">
-        <p class="eyebrow">Admin</p>
-        <h1>Bảng điều khiển</h1>
-        <div class="stats-grid">
-            <div><strong>12</strong><span>Yêu cầu tư vấn</span></div>
-            <div><strong>8</strong><span>Dịch vụ đang hiển thị</span></div>
-            <div><strong>3</strong><span>Bài viết nháp</span></div>
-        </div>
+<?php require __DIR__ . '/partials/header.php'; ?>
+<div class="container">
+    <p class="eyebrow">Admin</p>
+    <h1>Bảng điều khiển</h1>
+    <div class="stats-grid admin-stats">
+        <article>
+            <strong>12</strong>
+            <span>Yêu cầu tư vấn</span>
+        </article>
+        <article>
+            <strong>8</strong>
+            <span>Dịch vụ đang hiển thị</span>
+        </article>
+        <article>
+            <strong>3</strong>
+            <span>Bài viết nháp</span>
+        </article>
     </div>
-</main>
-</body>
-</html>
+</div>
+<?php require __DIR__ . '/partials/footer.php'; ?>

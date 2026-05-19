@@ -5,8 +5,8 @@
             <h1>Giải pháp chuyển đổi số toàn diện cho doanh nghiệp</h1>
             <p>Đồng bộ hóa đơn điện tử, chữ ký số, hợp đồng điện tử và các ứng dụng quản trị trên một hệ sinh thái bảo mật, dễ triển khai, sẵn sàng mở rộng.</p>
             <div class="hero-actions">
-                <a class="btn" href="<?php echo e(APP_URL); ?>/contact">Dùng thử miễn phí</a>
-                <a class="btn btn-secondary" href="<?php echo e(APP_URL); ?>/contact">Liên hệ ngay</a>
+                <a class="btn" href="<?php echo e(appUrl('contact')); ?>">Dùng thử miễn phí</a>
+                <a class="btn btn-secondary" href="<?php echo e(appUrl('contact')); ?>">Liên hệ ngay</a>
             </div>
             <div class="hero-trust">
                 <span>ISO-ready</span>

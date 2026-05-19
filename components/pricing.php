@@ -15,7 +15,7 @@
                         <li><?php echo e($feature); ?></li>
                     <?php endforeach; ?>
                 </ul>
-                <a class="btn btn-full" href="<?php echo e(APP_URL); ?>/contact">Đăng ký tư vấn</a>
+                <a class="btn btn-full" href="<?php echo e(appUrl('contact')); ?>">Đăng ký tư vấn</a>
             </article>
         <?php endforeach; ?>
     </div>

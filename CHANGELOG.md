@@ -7,10 +7,10 @@
 **Hạng mục:** Chỉnh lại màu sắc và font chữ theo nhận diện thương hiệu Viettel
 
 **Mô tả thay đổi:**
-- Đổi màu chủ đạo của website sang đỏ Viettel `#EE0033` theo guideline nhận diện thương hiệu.
+- Đổi màu chủ đạo của website sang đỏ Viettel `#ED1B2F` theo tài liệu nhận diện thương hiệu.
 - Thay hệ màu xanh công nghệ bằng bảng màu Viettel gồm đỏ, đen, xám than, xám trung, xám nhạt và trắng.
 - Cập nhật màu CTA, hero, dashboard mockup, card hover, form focus, thống kê, video banner, bản đồ giả lập, footer và nút gọi nhanh.
-- Cập nhật font stack theo guideline: ưu tiên `Beau Sans Pro`, `Magistral`, `Sarabun`, sau đó fallback về Arial/Helvetica.
+- Cập nhật font stack theo guideline: ưu tiên `Viettel Sans`, `Beau Sans Pro`, `Sarabun`, sau đó fallback về Arial/Helvetica.
 - Cập nhật `theme-color` của trình duyệt sang màu đỏ Viettel.
 
 **File ảnh hưởng:**

@@ -2,9 +2,9 @@
 <footer class="site-footer">
     <div class="container footer-grid">
         <div>
-            <a class="brand footer-brand" href="<?php echo e(APP_URL); ?>/">
-                <span class="brand-mark" aria-hidden="true">V</span>
-                <span><?php echo e(APP_NAME); ?></span>
+            <a class="brand footer-brand" href="<?php echo e(appUrl()); ?>">
+                <span class="brand-mark" aria-hidden="true">viettel</span>
+                <span class="brand-label">Dịch vụ giải pháp</span>
             </a>
             <p>Đồng hành cùng doanh nghiệp trong hạ tầng kết nối, bảo mật và chuyển đổi số.</p>
         </div>
@@ -16,22 +16,22 @@
         </address>
         <div>
             <strong>Đường dẫn</strong>
-            <a href="<?php echo e(APP_URL); ?>/#solutions">Giải pháp</a>
-            <a href="<?php echo e(APP_URL); ?>/services">Dịch vụ</a>
-            <a href="<?php echo e(APP_URL); ?>/pricing">Bảng giá</a>
-            <a href="<?php echo e(APP_URL); ?>/contact">Tư vấn</a>
+            <a href="<?php echo e(appUrl('#solutions')); ?>">Giải pháp</a>
+            <a href="<?php echo e(appUrl('services')); ?>">Dịch vụ</a>
+            <a href="<?php echo e(appUrl('pricing')); ?>">Bảng giá</a>
+            <a href="<?php echo e(appUrl('contact')); ?>">Tư vấn</a>
         </div>
         <div>
             <strong>Chính sách</strong>
-            <a href="#">Bảo mật dữ liệu</a>
-            <a href="#">Điều khoản sử dụng</a>
-            <a href="#">Hỗ trợ khách hàng</a>
+            <a href="<?php echo e(appUrl('contact')); ?>">Bảo mật dữ liệu</a>
+            <a href="<?php echo e(appUrl('contact')); ?>">Điều khoản sử dụng</a>
+            <a href="<?php echo e(appUrl('contact')); ?>">Hỗ trợ khách hàng</a>
         </div>
         <div>
             <strong>Mạng xã hội</strong>
-            <a href="#">Facebook</a>
-            <a href="#">Zalo</a>
-            <a href="#">LinkedIn</a>
+            <a href="mailto:<?php echo e(CONTACT_EMAIL); ?>">Email</a>
+            <a href="https://zalo.me/18008098" target="_blank" rel="noopener">Zalo</a>
+            <a href="tel:18008098">Hotline</a>
         </div>
     </div>
     <div class="container footer-bottom">
