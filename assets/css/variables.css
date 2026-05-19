@@ -1,0 +1,23 @@
+:root {
+    --color-primary: #ee0033;
+    --color-primary-dark: #b40024;
+    --color-primary-soft: #fff0f3;
+    --color-viettel: #ee0033;
+    --color-ink: #000000;
+    --color-muted: #44494d;
+    --color-line: #e4e4e4;
+    --color-surface: #ffffff;
+    --color-soft: #f2f2f2;
+    --color-navy: #000000;
+    --color-accent: #44494d;
+    --color-gray-mid: #b5b4b4;
+    --gradient-primary: linear-gradient(135deg, #ee0033 0%, #d0002d 58%, #a90022 100%);
+    --gradient-dark: linear-gradient(135deg, #000000 0%, #2f3336 54%, #ee0033 100%);
+    --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.12);
+    --shadow-card: 0 16px 36px rgba(238, 0, 51, 0.14);
+    --radius: 14px;
+    --radius-lg: 24px;
+    --container: 1180px;
+    --font-base: "Sarabun", Arial, Helvetica, sans-serif;
+    --font-heading: "Beau Sans Pro", "Magistral", "Sarabun", Arial, Helvetica, sans-serif;
+}
