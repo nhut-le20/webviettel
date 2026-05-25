@@ -10,6 +10,10 @@ if (isUserLoggedIn()) {
 
 if (isset($_GET['registered'])) {
     $success = 'Tạo tài khoản thành công. Vui lòng đăng nhập.';
+} elseif (isset($_GET['logout'])) {
+    $success = 'Bạn đã đăng xuất thành công.';
+} elseif (isset($_GET['reset'])) {
+    $success = 'Mật khẩu của bạn đã được cập nhật. Vui lòng đăng nhập lại.';
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -56,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="hidden" name="csrf_token" value="<?php echo e(csrfToken()); ?>">
 
                 <div class="form-control">
-                    <label for="username">Tên đăng nhập hoặc email</label>
+                    <label for="username">Tên đăng nhập</label>
                     <input id="username" name="username" type="text" autocomplete="username" required value="<?php echo e($_POST['username'] ?? ''); ?>">
                 </div>
 
@@ -69,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
 
             <div class="auth-footer">
+                <p><a class="text-link" href="<?php echo e(appUrl('forgot-password')); ?>">Quên mật khẩu?</a></p>
                 <p>Bạn chưa có tài khoản? <a class="text-link" href="<?php echo e(appUrl('register')); ?>">Đăng ký ngay</a></p>
                 <a class="text-link" href="<?php echo e(appUrl('contact')); ?>">Yêu cầu hỗ trợ</a>
             </div>

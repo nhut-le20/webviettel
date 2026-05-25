@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="hidden" name="csrf_token" value="<?php echo e(csrfToken()); ?>">
 
                 <div class="form-control">
-                    <label for="username">Tên đăng nhập hoặc email</label>
+                    <label for="username">Tên đăng nhập</label>
                     <input id="username" name="username" type="text" autocomplete="username" required value="<?php echo e($_POST['username'] ?? ''); ?>">
                 </div>
 

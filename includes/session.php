@@ -109,6 +109,96 @@ function registerUser(string $username, string $password): bool
     ]);
 }
 
+function ensurePasswordResetTableExists(PDO $pdo): void
+{
+    $pdo->exec(
+        'CREATE TABLE IF NOT EXISTS password_resets (
+            id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(50) NOT NULL,
+            token VARCHAR(64) NOT NULL,
+            expires_at DATETIME NOT NULL,
+            created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            INDEX (token)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+    );
+}
+
+function cleanupExpiredPasswordResets(PDO $pdo): void
+{
+    $statement = $pdo->prepare('DELETE FROM password_resets WHERE expires_at < NOW()');
+    $statement->execute();
+}
+
+function createPasswordResetToken(string $username): string|false
+{
+    $pdo = getDatabaseConnection();
+    $stmt = $pdo->prepare('SELECT id FROM users WHERE username = :username LIMIT 1');
+    $stmt->execute(['username' => $username]);
+    $user = $stmt->fetch();
+
+    if (!$user) {
+        return false;
+    }
+
+    ensurePasswordResetTableExists($pdo);
+    cleanupExpiredPasswordResets($pdo);
+
+    $token = bin2hex(random_bytes(32));
+    $expiresAt = (new DateTime('+1 hour'))->format('Y-m-d H:i:s');
+
+    $insert = $pdo->prepare('INSERT INTO password_resets (username, token, expires_at) VALUES (:username, :token, :expires_at)');
+    $insert->execute([
+        'username' => $username,
+        'token' => $token,
+        'expires_at' => $expiresAt,
+    ]);
+
+    return $token;
+}
+
+function getPasswordResetRequest(string $token): ?array
+{
+    $pdo = getDatabaseConnection();
+    ensurePasswordResetTableExists($pdo);
+    cleanupExpiredPasswordResets($pdo);
+
+    $stmt = $pdo->prepare('SELECT username, expires_at FROM password_resets WHERE token = :token LIMIT 1');
+    $stmt->execute(['token' => $token]);
+    $request = $stmt->fetch();
+
+    if (!$request) {
+        return null;
+    }
+
+    return $request;
+}
+
+function resetPasswordWithToken(string $token, string $password): bool
+{
+    $pdo = getDatabaseConnection();
+    ensurePasswordResetTableExists($pdo);
+    cleanupExpiredPasswordResets($pdo);
+
+    $stmt = $pdo->prepare('SELECT username FROM password_resets WHERE token = :token AND expires_at > NOW() LIMIT 1');
+    $stmt->execute(['token' => $token]);
+    $request = $stmt->fetch();
+
+    if (!$request) {
+        return false;
+    }
+
+    $update = $pdo->prepare('UPDATE users SET password = :password WHERE username = :username');
+    $updated = $update->execute([
+        'password' => password_hash($password, PASSWORD_DEFAULT),
+        'username' => $request['username'],
+    ]);
+
+    $delete = $pdo->prepare('DELETE FROM password_resets WHERE username = :username');
+    $delete->execute(['username' => $request['username']]);
+
+    return $updated;
+}
+
 function logoutUser(): void
 {
     unset($_SESSION['user_logged_in'], $_SESSION['user_username']);
