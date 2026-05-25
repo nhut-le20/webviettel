@@ -12,6 +12,9 @@ $routes = [
     'pricing' => 'pages/pricing.php',
     'contact' => 'pages/contact.php',
     'blog' => 'pages/blog.php',
+    'login' => 'pages/login.php',
+    'register' => 'pages/register.php',
+    'logout' => 'pages/logout.php',
 ];
 
 $page = isset($_GET['page']) ? trim((string) $_GET['page']) : 'home';
@@ -24,9 +27,17 @@ $pageNames = [
     'pricing' => 'Bảng giá',
     'contact' => 'Liên hệ',
     'blog' => 'Tin tức',
+    'login' => 'Đăng nhập',
+    'register' => 'Đăng ký',
+    'logout' => 'Đăng xuất',
 ];  
  
 $pageTitle = $pageNames[$currentPage] . ' - ' . APP_NAME;
+
+if ($currentPage === 'logout') {
+    require $pageFile;
+    exit;
+}
 
 require __DIR__ . '/components/header.php';
 require $pageFile;
