@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/helpers.php';
 
 if (session_status() === PHP_SESSION_NONE) {
@@ -49,6 +50,69 @@ function requireAdmin(): void
         header('Location: ' . appUrl('admin/login.php'));
         exit;
     }
+}
+
+function isUserLoggedIn(): bool
+{
+    return !empty($_SESSION['user_logged_in']);
+}
+
+function currentUser(): ?string
+{
+    return $_SESSION['user_username'] ?? null;
+}
+
+function loginUser(string $username, string $password): bool
+{
+    $pdo = getDatabaseConnection();
+    $stmt = $pdo->prepare('SELECT id, username, password FROM users WHERE username = :username LIMIT 1');
+    $stmt->execute(['username' => $username]);
+    $user = $stmt->fetch();
+
+    if (!$user) {
+        return false;
+    }
+
+    if (password_verify($password, $user['password'])) {
+        // ok
+    } elseif ($user['password'] === $password) {
+        $update = $pdo->prepare('UPDATE users SET password = :password WHERE id = :id');
+        $update->execute([
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'id' => $user['id'],
+        ]);
+    } else {
+        return false;
+    }
+
+    session_regenerate_id(true);
+    $_SESSION['user_logged_in'] = true;
+    $_SESSION['user_username'] = $user['username'];
+
+    return true;
+}
+
+function registerUser(string $username, string $password): bool
+{
+    $pdo = getDatabaseConnection();
+    $stmt = $pdo->prepare('SELECT id FROM users WHERE username = :username LIMIT 1');
+    $stmt->execute(['username' => $username]);
+
+    if ($stmt->fetch()) {
+        return false;
+    }
+
+    $insert = $pdo->prepare('INSERT INTO users (username, password) VALUES (:username, :password)');
+    return $insert->execute([
+        'username' => $username,
+        'password' => password_hash($password, PASSWORD_DEFAULT),
+    ]);
+}
+
+function logoutUser(): void
+{
+    unset($_SESSION['user_logged_in'], $_SESSION['user_username']);
+    session_regenerate_id(true);
 }
 
 function csrfToken(): string

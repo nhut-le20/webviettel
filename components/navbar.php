@@ -16,6 +16,12 @@
             <a class="<?php echo e(activeClass($currentPage, 'blog')); ?>" href="<?php echo e(appUrl('blog')); ?>">Tin tức</a>
             <a class="<?php echo e(activeClass($currentPage, 'contact')); ?>" href="<?php echo e(appUrl('contact')); ?>">Liên hệ</a>
             <a class="btn btn-small" href="<?php echo e(appUrl('contact')); ?>">Đăng ký tư vấn</a>
+            <?php if (isUserLoggedIn()): ?>
+                <a class="btn btn-small btn-secondary" href="<?php echo e(appUrl('logout')); ?>">Đăng xuất</a>
+            <?php else: ?>
+                <a class="btn btn-small" href="<?php echo e(appUrl('login')); ?>">Đăng nhập</a>
+                <a class="btn btn-small btn-secondary" href="<?php echo e(appUrl('register')); ?>">Đăng ký</a>
+            <?php endif; ?>
         </nav>
     </div>
 </header>

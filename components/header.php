@@ -8,6 +8,7 @@
     <title><?php echo e($pageTitle); ?></title>
     <link rel="preload" href="<?php echo e(asset('css/variables.css')); ?>" as="style">
     <link rel="stylesheet" href="<?php echo e(asset('css/variables.css')); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/animations.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/responsive.css')); ?>">
