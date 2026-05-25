@@ -1,11 +1,15 @@
 <?php
 
+if (!function_exists('envValue')) {
+    require_once __DIR__ . '/config.php';
+}
+
 $database = [
-    'host' => 'localhost',
-    'name' => 'webviettel',
-    'user' => 'root',
-    'password' => '',
-    'charset' => 'utf8mb4',
+    'host' => envValue('DB_HOST', 'localhost'),
+    'name' => envValue('DB_NAME', 'webviettel'),
+    'user' => envValue('DB_USER', 'root'),
+    'password' => envValue('DB_PASSWORD', ''),
+    'charset' => envValue('DB_CHARSET', 'utf8mb4'),
 ];
 
 function getDatabaseConnection(): PDO
@@ -24,4 +28,3 @@ function getDatabaseConnection(): PDO
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
 }
-

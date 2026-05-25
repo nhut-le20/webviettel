@@ -1,7 +1,16 @@
 Options -Indexes
 
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteRule ^(config|includes)/ - [F,L]
+    RewriteRule \.(sql|md|log|env)$ - [F,L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^([a-zA-Z0-9-]+)/?$ index.php?page=$1 [L,QSA]
@@ -10,4 +19,3 @@ Options -Indexes
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
 </IfModule>
-

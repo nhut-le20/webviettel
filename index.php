@@ -3,6 +3,7 @@
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/includes/helpers.php';
 require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/includes/session.php';
 
 $routes = [
     'home' => 'pages/home.php',
@@ -23,7 +24,8 @@ $pageNames = [
     'pricing' => 'Bảng giá',
     'contact' => 'Liên hệ',
     'blog' => 'Tin tức',
-];
+];  
+ 
 $pageTitle = $pageNames[$currentPage] . ' - ' . APP_NAME;
 
 require __DIR__ . '/components/header.php';

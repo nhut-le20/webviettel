@@ -90,6 +90,15 @@
         flex-direction: column;
         padding: 18px 0;
     }
+
+    .admin-filter {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 560px) {
