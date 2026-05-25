@@ -74,6 +74,19 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
+CREATE TABLE IF NOT EXISTS `password_resets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(50) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `expires_at` datetime NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  INDEX (`token`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1, 'admin', '123456');
 

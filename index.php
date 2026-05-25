@@ -14,6 +14,8 @@ $routes = [
     'blog' => 'pages/blog.php',
     'login' => 'pages/login.php',
     'register' => 'pages/register.php',
+    'forgot-password' => 'pages/forgot-password.php',
+    'reset-password' => 'pages/reset-password.php',
     'logout' => 'pages/logout.php',
 ];
 
@@ -29,6 +31,8 @@ $pageNames = [
     'blog' => 'Tin tức',
     'login' => 'Đăng nhập',
     'register' => 'Đăng ký',
+    'forgot-password' => 'Quên mật khẩu',
+    'reset-password' => 'Đặt lại mật khẩu',
     'logout' => 'Đăng xuất',
 ];  
  
