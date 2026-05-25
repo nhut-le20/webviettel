@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section class="section auth-section">
     <div class="auth-card">
         <div class="auth-card__visual">
-            <span class="eyebrow">Đăng nhập chuyên nghiệp</span>
+            <span class="eyebrow">Đăng nhập </span>
             <h2>Quản lý tài khoản nhanh chóng</h2>
             <p>Truy cập đầy đủ báo cáo, dịch vụ và hỗ trợ một cách an toàn với hệ thống xác thực chuyên nghiệp.</p>
             <ul>
