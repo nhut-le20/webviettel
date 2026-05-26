@@ -1,23 +1,30 @@
 :root {
-    --color-primary: #ed1b2f;
-    --color-primary-dark: #b51222;
-    --color-primary-soft: #fff1f3;
-    --color-viettel: #ed1b2f;
+    --color-primary: #EE0033;
+    --color-primary-dark: #000000;
+    --color-primary-soft: #F2F2F2;
+    --color-viettel: #EE0033;
     --color-ink: #000000;
-    --color-muted: #4a4a4a;
-    --color-line: #e7e7e7;
-    --color-surface: #ffffff;
-    --color-soft: #f6f6f6;
+    --color-muted: #44494D;
+    --color-line: #FFFFFF;
+    --color-surface: #FFFFFF;
+    --color-soft: #FFFFFF;
     --color-navy: #000000;
-    --color-accent: #4a4a4a;
-    --color-gray-mid: #b2b2b2;
-    --gradient-primary: linear-gradient(135deg, #ed1b2f 0%, #c91527 100%);
-    --gradient-dark: linear-gradient(135deg, #000000 0%, #1f1f1f 62%, #ed1b2f 100%);
+    --color-accent: #44494D;
+    --color-gray-mid: #B5B4B4;
+    --gradient-primary: #EE0033;
+    --gradient-dark: linear-gradient(135deg, #000000 0%, #44494D 62%, #EE0033 100%);
     --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.12);
-    --shadow-card: 0 16px 36px rgba(237, 27, 47, 0.14);
+    --shadow-card: 0 16px 36px rgba(238, 0, 51, 0.14);
     --radius: 8px;
     --radius-lg: 12px;
     --container: 1180px;
     --font-base: "Viettel Sans", "Beau Sans Pro", "Sarabun", Arial, Helvetica, sans-serif;
     --font-heading: "Viettel Sans", "Beau Sans Pro", "Sarabun", Arial, Helvetica, sans-serif;
+    
+    /* Typography Colors */
+    --text-on-primary: #FFFFFF;
+    --text-on-dark: #FFFFFF;
+    --text-on-muted-dark: #FFFFFF;
+    --text-on-gray: #000000;
+    --text-on-surface: #000000;
 }

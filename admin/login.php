@@ -109,8 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .error-message{
-            background:#ffe5e5;
-            color:#d60000;
+            background:#FFE6F0;
+            color:#EE0033;
             padding:12px;
             border-radius:8px;
             margin-bottom:20px;
@@ -129,13 +129,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius:8px;
             padding:0 45px 0 15px;
             font-size:14px;
+            color:#000;
             outline:none;
             transition:0.3s;
         }
 
         .input-group input:focus{
-            border-color:#6c63ff;
-            box-shadow:0 0 0 3px rgba(108,99,255,0.15);
+            border-color:#EE0033;
+            box-shadow:0 0 0 3px rgba(238,0,51,0.15);
         }
 
         .input-group i{
@@ -151,7 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             height:50px;
             border:none;
             border-radius:8px;
-            background:#6c63ff;
+            background:#EE0033;
             color:#fff;
             font-size:15px;
             font-weight:500;
@@ -160,7 +161,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .login-btn:hover{
-            background:#5a52e0;
+            background:#B40026;
         }
 
         .extra{

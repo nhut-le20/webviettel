@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['contact_form'] ?? '') === 
 
                 <p
                     style="
-                        color: green;
+                        color: #EE0033;
                         font-weight: bold;
                         margin-top: 10px;
                     "
@@ -186,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['contact_form'] ?? '') === 
 
                     <p
                         style="
-                            color: green;
+                            color: #EE0033;
                             font-weight: bold;
                             margin-top: 10px;
                         "
@@ -205,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['contact_form'] ?? '') === 
 
                 <p
                     style="
-                        color: red;
+                        color: #EE0033;
                         font-weight: bold;
                         margin-top: 10px;
                     "
