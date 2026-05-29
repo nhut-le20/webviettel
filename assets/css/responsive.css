@@ -1,0 +1,181 @@
+@media (max-width: 1100px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .benefits-grid .benefit-item {
+        grid-column: span 1;
+    }
+
+    .timeline {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .timeline-step::after {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .primary-nav {
+        position: absolute;
+        inset: 76px 16px auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 18px;
+        border: 1px solid var(--color-line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: var(--shadow-soft);
+    }
+
+    .primary-nav.is-open {
+        display: flex;
+    }
+
+    .hero-grid,
+    .split-layout,
+    .contact-grid,
+    .footer-grid,
+    .faq-layout,
+    .video-banner {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid,
+    .process-grid,
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-grid,
+    .benefits-grid,
+    .timeline,
+    .logo-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-visual {
+        min-height: auto;
+    }
+
+    .mockup-grid {
+        grid-template-columns: 70px 1fr;
+    }
+
+    .mockup-panel.large {
+        grid-column: span 1;
+    }
+
+    .video-banner {
+        min-height: auto;
+    }
+
+    .admin-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .container {
+        width: min(100% - 24px, var(--container));
+    }
+
+    .section {
+        padding: 58px 0;
+    }
+
+    .nav-wrap {
+        min-height: 68px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand-mark {
+        font-size: 30px;
+    }
+
+    .brand-label {
+        display: none;
+    }
+
+    .primary-nav {
+        inset: 68px 12px auto;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .hero-actions,
+    .btn {
+        width: 100%;
+    }
+
+    .cards-grid,
+    .benefits-grid,
+    .timeline,
+    .logo-strip {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card,
+    .pricing-card,
+    .process-grid article,
+    .contact-panel,
+    .testimonial,
+    .benefit-item,
+    .timeline-step,
+    .contact-form,
+    .video-banner {
+        padding: 22px;
+    }
+
+    .dashboard-mockup {
+        padding: 12px;
+        border-radius: var(--radius-lg);
+    }
+
+    .mockup-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mockup-sidebar {
+        display: none;
+    }
+
+    .floating-chip {
+        display: none;
+    }
+
+    .play-button {
+        width: 72px;
+        height: 72px;
+    }
+
+    .mobile-call {
+        display: inline-flex;
+    }
+}

@@ -1,0 +1,4 @@
+- [ ] Kiểm tra/cập nhật logic link "chưa tư vấn" trong admin/customers.php
+- [x] Thêm file xử lý admin/mark_consulted.php để cập nhật cột consulted = 1 và redirect về customers.php
+- [ ] (Tuỳ chọn) cập nhật DB/SQL nếu cột `consulted` chưa tồn tại
+- [ ] Test: mở URL /admin/mark_consulted.php?id=... và xác nhận trạng thái hiển thị "✅ Đã tư vấn"

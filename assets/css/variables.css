@@ -1,0 +1,37 @@
+:root {
+    /* Màu chính - Viettel Brand */
+    --color-primary: #EE0033;
+    --color-primary-dark: #CC0033;
+    --color-primary-soft: #FFE5EB;
+    --color-viettel: #EE0033;
+    
+    /* Màu bổ trợ */
+    --color-black: #000000;
+    --color-dark-gray: #44494D;
+    --color-medium-gray: #B5B4B4;
+    --color-light-gray: #F2F2F2;
+    
+    /* Mapping cho CSS hiện tại */
+    --color-ink: #000000;
+    --color-muted: #44494D;
+    --color-line: #E7E7E7;
+    --color-surface: #ffffff;
+    --color-soft: #F2F2F2;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #EE0033 0%, #CC0033 100%);
+    --gradient-dark: linear-gradient(135deg, #000000 0%, #1f1f1f 62%, #EE0033 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.12);
+    --shadow-card: 0 16px 36px rgba(238, 0, 51, 0.14);
+    
+    /* Spacing & Layout */
+    --radius: 8px;
+    --radius-lg: 12px;
+    --container: 1180px;
+    
+    /* Fonts */
+    --font-base: "Beau Sans Pro", "Magistral", "Sarabun", Arial, Helvetica, sans-serif;
+    --font-heading: "Beau Sans Pro", "Magistral", "Sarabun", Arial, Helvetica, sans-serif;
+}
