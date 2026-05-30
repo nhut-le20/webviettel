@@ -61,14 +61,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <section class="section contact-section" id="contacts">
-    <div class="container">
-        <div class="contact-panel glass-card reveal">
-            <div class="contact-panel-copy">
-                <p class="eyebrow">Đăng ký tư vấn</p>
-                <h2>Chỉ cần để lại thông tin, chúng tôi sẽ liên hệ ngay.</h2>
-                <p>Nhập yêu cầu, quy mô và dịch vụ quan tâm để nhận đề xuất giải pháp phù hợp nhất.</p>
+
+    <div class="container contact-grid">
+
+        <div class="contact-copy reveal">
+
+            <p class="eyebrow">
+                Liên hệ tư vấn
+            </p>
+
+            <h2>
+                Sẵn sàng số hóa quy trình của bạn?
+            </h2>
+
+            <p>
+                Để lại thông tin, chuyên viên sẽ liên hệ để tư vấn giải pháp,
+                chi phí và lộ trình triển khai phù hợp.
+            </p>
+
+            <div class="contact-methods">
+
+                <a href="tel:18008098">
+                    Hotline:
+                    <?php echo e(CONTACT_PHONE); ?>
+                </a>
+
+                <a href="mailto:<?php echo e(CONTACT_EMAIL); ?>">
+                    Email:
+                    <?php echo e(CONTACT_EMAIL); ?>
+                </a>
+
+                <a
+                    href="https://zalo.me/18008098"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    Chat Zalo
+                </a>
+
             </div>
-            <form class="contact-form" method="post">
+
+            <div class="map-placeholder">
+
+                <span>
+                    <?php echo e(CONTACT_ADDRESS); ?>
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <form
+            class="contact-form glass-card reveal"
+            method="post"
+        >
 
             <label>
 
@@ -132,20 +180,82 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             </label>
 
-            <button class="btn" type="submit">Đăng ký tư vấn</button>
+            <button class="btn" type="submit">
+
+                Đăng ký tư vấn
+
+            </button>
+
+            <!-- SUCCESS / AI REPLY -->
 
             <?php if ($success !== ''): ?>
-                <p class="form-status form-status--success"><?php echo e($success); ?></p>
+
+                <p
+                    style="
+                        color: green;
+                        font-weight: bold;
+                        margin-top: 10px;
+                    "
+                >
+                    <?php echo e($success); ?>
+                </p>
+
                 <?php if (!empty($aiReply)): ?>
-                    <p class="form-status form-status--note"><?php echo e($aiReply); ?></p>
+                    <p
+                        style="
+                            color: #1b5e20;
+                            font-weight: 600;
+                            margin-top: 8px;
+                        "
+                    >
+                        <?php echo e($aiReply); ?>
+                    </p>
                 <?php endif; ?>
-            <?php elseif (($_GET['success'] ?? '') === '1'): ?>
-                <p class="form-status form-status--success">Bạn đã đăng ký thành công. Sẽ có nhân viên tư vấn bạn.</p>
-                <p class="form-status form-status--note">AI: Cảm ơn bạn! Chúng tôi đã ghi nhận nhu cầu. Vui lòng giữ máy, nhân viên sẽ liên hệ sớm.</p>
+
+            <?php else: ?>
+
+                <?php if (($_GET['success'] ?? '') === '1'): ?>
+
+                    <p
+                        style="
+                            color: green;
+                            font-weight: bold;
+                            margin-top: 10px;
+                        "
+                    >
+                        Bạn đã đăng ký thành công. Sẽ có nhân viên tư vấn bạn.
+                    </p>
+
+                    <p
+                        style="
+                            color: #1b5e20;
+                            font-weight: 600;
+                            margin-top: 8px;
+                        "
+                    >
+                        AI: Cảm ơn bạn! Chúng tôi đã ghi nhận nhu cầu của bạn. Vui lòng giữ máy, nhân viên sẽ liên hệ sớm.
+                    </p>
+
+                <?php endif; ?>
+
             <?php endif; ?>
 
+
+            <!-- ERROR -->
+
+
             <?php if ($error !== ''): ?>
-                <p class="form-status form-status--error"><?php echo e($error); ?></p>
+
+                <p
+                    style="
+                        color: red;
+                        font-weight: bold;
+                        margin-top: 10px;
+                    "
+                >
+                    <?php echo e($error); ?>
+                </p>
+
             <?php endif; ?>
 
         </form>

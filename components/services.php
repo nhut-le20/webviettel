@@ -10,7 +10,7 @@
                 <span class="icon-badge icon-<?php echo e($service['icon']); ?>" aria-hidden="true"></span>
                 <h3><?php echo e($service['title']); ?></h3>
                 <p><?php echo e($service['description']); ?></p>
-<a class="text-link" href="/webviettel-main/services.php?service=<?php echo e((string)($service['slug'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>">Xem chi tiết</a>
+<a class="text-link" href="<?= htmlspecialchars(appUrl('index.php'), ENT_QUOTES, 'UTF-8') ?>?page=<?php echo e((string)($service['slug'] ?? ''), ENT_QUOTES, 'UTF-8'); ?>">Xem chi tiết</a>
             </article>
         <?php endforeach; ?>
     </div>
