@@ -2,99 +2,119 @@
 // Trang chi tiết dịch vụ Hợp đồng điện tử
 ?>
 <video autoplay muted loop playsinline class="video-bg">
-    <source src="video/videoHDDT.WEBM" type="video/mp4">
+    <source src="video/videoHDDT.WEBM" type="video/webm">
 </video>
-
+<div class="video-overlay"></div>
 <style>
-.video-bg{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-2;
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
 }
 
-.video-overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.5);
-    z-index:-1;
-}
-.section-heading p::-webkit-scrollbar{
-    width:6px;
+.video-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: -1;
 }
 
-.section-heading p::-webkit-scrollbar-track{
-    background:transparent; /* ẩn nền trắng */
+.section-heading p::-webkit-scrollbar {
+    width: 6px;
 }
 
-.section-heading p::-webkit-scrollbar-thumb{
-    background:#ffffff;
-    border-radius:20px;
-    border:none;
+.section-heading p::-webkit-scrollbar-track {
+    background: transparent;
 }
 
-.section-heading p::-webkit-scrollbar-thumb:hover{
-    background:#d9d9d9;
+.section-heading p::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 20px;
 }
 
-/* Firefox */
-.section-heading p{
-    scrollbar-width:thin;
-    scrollbar-color:#ffffff transparent;
+.section-heading p {
+    scrollbar-width: thin;
+    scrollbar-color: #ffffff transparent;
 }
-
 </style>
-    <section class="section page-hero">
-        <div class="container narrow">
-            <p class="eyebrow">Hợp đồng điện tử</p>
-            <h1>Tạo - gửi - ký - lưu trữ hợp đồng tập trung, đúng pháp lý</h1>
-            <p>
-                Trang chi tiết cho dịch vụ <strong>Hợp đồng điện tử</strong>. Tối ưu hóa quy trình soạn thảo,
-                luân chuyển phê duyệt và quản lý phiên bản hợp đồng, giảm giấy tờ và tăng tốc độ ký.
-            </p>
-        </div>
-    </section>
-
-  <section class="section">
-    <div class="container section-heading">
-
-        <p style="color:white;" class="eyebrow">
-            Tổng quan
-        </p>
-
-        <h2 style="color:white;">
-            Một luồng ký số rõ ràng, dễ vận hành
-        </h2>
-
-        <p style="
-            color:white;
-            max-height:300px;
-            overflow-y:auto;
-            padding-right:10px;
-        ">
-            Hợp đồng điện tử Viettel là một dạng hợp đồng được thực hiện dưới dạng điện tử. Đây được xem là dịch vụ số hóa cho phép doanh nghiệp quản lý hợp đồng, tài liệu với khách hàng thông qua mạng Internet., website, email hoặc các nền tảng trực tuyến khác của Tập đoàn Viettel. Các doanh nghiệp hoàn toàn có thể thực hiện các giao dịch, ký kết hợp đồng và thực hiện các cam kết mà không cần phải gặp mặt trực tiếp hoặc sử dụng các thủ tục giấy tờ truyền thống.
-
-Theo điều 33 và điều 34 của Luật giao dịch điện tử 2005, thì hợp đồng điện tử được coi là hợp đồng thiết lập dưới dạng thông điệp dữ liệu và có giá trị pháp lý theo quy định của luật này. Vì vậy, hợp đồng điện tử Viettel cũng có giá trị pháp lý tương đương đương như một hợp đồng điện tử theo luật định.
-
-Điều 33. Hợp đồng điện tử: Hợp đồng điện tử là hợp đồng được thiết lập dưới dạng thông điệp dữ liệu theo quy định của Luật này.
-Điều 34. Thừa nhận giá trị pháp lý của hợp đồng điện tử: Giá trị pháp lý của hợp đồng điện tử không thể bị phủ nhận chỉ vì hợp đồng đó được thể hiện dưới dạng thông điệp dữ liệu
-Hợp đồng điện tử vContract có những tính năng cụ thể như sau:
-
-Tạo hợp đồng, gửi tài liệu, lưu trữ, gửi thông báo nhắc nhở đến các bên tham gia ký kết hợp đồng
-Đa dạng nhiều hình thức ký số như Token CA, OTP, ký tự động . 
-Cho phép doanh nghiệp ký linh hoạt trên nhiều thiết bị như smartphone, máy tính bảng và máy tính để bàn mọi lúc, mọi nơi
-Doanh nghiệp có thể ký đồng loạt nhiều hợp đồng cùng một lúc
-Hợp đồng điện tử Viettel có khả năng tương thích với các phần mềm khác như HRM, CRM, ERP …. 
-Đáp ứng đầy đủ các tiêu chuẩn pháp lý theo quy định của Luật Giao dịch điện tử và các văn bản pháp luật liên quan khác.
-        </p>
+<section class="section page-hero">
+    <div class="container narrow">
+        <p class="eyebrow">Hợp đồng điện tử</p>
+        <h1>Tạo - gửi - ký - lưu trữ hợp đồng tập trung, đúng pháp lý</h1>
+        <p>Giải pháp hợp đồng điện tử Viettel tối ưu hóa quy trình soạn thảo, phê duyệt và quản lý phiên bản hợp đồng, giảm giấy tờ và tăng tốc độ ký.</p>
     </div>
 </section>
-    <?php
-    require __DIR__ . '/../components/process.php';
-    require __DIR__ . '/../components/contact-section.php';
-    require __DIR__ . '/../components/faq.php';
-    ?>
+
+<section class="section">
+    <div class="container section-heading">
+        <p class="eyebrow">Tổng quan</p>
+        <h2>Một luồng ký số rõ ràng, dễ vận hành</h2>
+        <p>Hợp đồng điện tử Viettel là dịch vụ số hóa cho phép doanh nghiệp quản lý hợp đồng và tài liệu thông qua mạng Internet. Các doanh nghiệp hoàn toàn có thể thực hiện các giao dịch, ký kết hợp đồng mà không cần phải gặp mặt trực tiếp hoặc sử dụng các thủ tục giấy tờ truyền thống.</p>
+        <div class="row g-4 mt-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Tạo hợp đồng</h5>
+                        <p class="card-text text-muted">Tạo, gửi tài liệu và gửi thông báo nhắc nhở đến các bên tham gia ký kết.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Đa dạng hình thức ký</h5>
+                        <p class="card-text text-muted">Hỗ trợ Token CA, OTP, ký tự động và linh hoạt trên nhiều thiết bị.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Lưu trữ tập trung</h5>
+                        <p class="card-text text-muted">Quản lý phiên bản hợp đồng, ký đồng loạt và kết nối với ERP, CRM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container section-heading">
+        <p class="eyebrow">Lợi ích</p>
+        <h2>Tối ưu hóa quy trình hợp đồng, giảm thời gian ký</h2>
+        <p>Giải pháp giúp doanh nghiệp loại bỏ giấy tờ truyền thống, tăng tốc độ ký kết và đảm bảo giá trị pháp lý đầy đủ theo luật giao dịch điện tử.</p>
+        <div class="row g-4 mt-4">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm bg-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Giảm chi phí</h5>
+                        <p class="card-text text-muted">Tiết kiệm chi phí in ấn, gửi fax và lưu trữ hồ sơ giấy tờ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm bg-white h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger">Đảm bảo pháp lý</h5>
+                        <p class="card-text text-muted">Tuân thủ Luật giao dịch điện tử 2005 và có giá trị pháp lý đầy đủ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="<?php echo appUrl('?page=services'); ?>" class="btn btn-outline-danger">Quay lại danh sách dịch vụ</a>
+        </div>
+    </div>
+</section>
+
+<?php
+require __DIR__ . '/../components/process.php';
+require __DIR__ . '/../components/contact-section.php';
+require __DIR__ . '/../components/faq.php';
+?>
 

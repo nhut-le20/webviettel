@@ -24,9 +24,6 @@
                 <li class="nav-item">
                     <a class="nav-link <?php echo e(activeClass($currentPage, 'blog')); ?>" href="<?php echo appUrl('blog'); ?>">Tin tức</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo appUrl('contact'); ?>">Liên hệ</a>
-                </li>
             </ul>
             <div class="d-flex align-items-center ms-lg-3">
                 <a class="btn btn-tech btn-lg px-4" href="<?php echo appUrl('contact'); ?>">Tư vấn ngay</a>
