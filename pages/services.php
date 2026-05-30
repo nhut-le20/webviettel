@@ -32,7 +32,7 @@ if ($serviceSlug !== '') {
         </div>
 
         <div class="container" style="margin-top:24px;">
-            <a class="text-link" href="<?= htmlspecialchars(appUrl('services.php'), ENT_QUOTES, 'UTF-8') ?>">&larr; Quay lại danh sách</a>
+            <a class="text-link" href="<?= htmlspecialchars(appUrl('index.php'), ENT_QUOTES, 'UTF-8') ?>?page=services">&larr; Quay lại danh sách</a>
         </div>
     </section>
 <?php else: ?>

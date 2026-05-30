@@ -16,7 +16,7 @@
         </address>
         <div>
             <strong>Đường dẫn</strong>
-            <a href="<?php echo e(appUrl('solutions')); ?>">Giải pháp</a>
+            <a href="<?php echo e(appUrl('#solutions')); ?>">Giải pháp</a>
             <a href="<?php echo e(appUrl('services')); ?>">Dịch vụ</a>
             <a href="<?php echo e(appUrl('pricing')); ?>">Bảng giá</a>
             <a href="<?php echo e(appUrl('contact')); ?>">Tư vấn</a>
@@ -38,7 +38,6 @@
         <small>&copy; <?php echo date('Y'); ?> <?php echo e(APP_NAME); ?>. All rights reserved.</small>
     </div>
 </footer>
-<a class="fixed-contact-btn" href="<?php echo e(appUrl('contact')); ?>" aria-label="Liên hệ tư vấn">Liên hệ</a>
 <script src="<?php echo e(asset('js/navbar.js')); ?>" defer></script>
 <script src="<?php echo e(asset('js/slider.js')); ?>" defer></script>
 <script src="<?php echo e(asset('js/animations.js')); ?>" defer></script>

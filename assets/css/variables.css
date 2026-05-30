@@ -34,12 +34,4 @@
     /* Fonts */
     --font-base: "Beau Sans Pro", "Magistral", "Sarabun", Arial, Helvetica, sans-serif;
     --font-heading: "Beau Sans Pro", "Magistral", "Sarabun", Arial, Helvetica, sans-serif;
-    /* Motion & transitions */
-    --ease: cubic-bezier(0.2, 0.9, 0.2, 1);
-    --transition-fast: 180ms var(--ease);
-    --transition-medium: 360ms var(--ease);
-    --transition-slow: 560ms var(--ease);
-    /* Background & surface */
-    --color-bg: #FAFBFC;
-    --page-overlay: rgba(250,250,250,0.98);
 }

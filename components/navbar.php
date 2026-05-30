@@ -17,11 +17,10 @@
         </button>
         <nav id="primary-nav" class="primary-nav" aria-label="Điều hướng chính" data-nav-menu>
             <a class="<?php echo e(activeClass($currentPage, 'home')); ?>" href="<?php echo e(appUrl()); ?>">Trang chủ</a>
-            <a href="<?php echo e(appUrl('solutions')); ?>">Giải pháp</a>
+            <a href="<?php echo e(appUrl('#solutions')); ?>">Giải pháp</a>
             <a class="<?php echo e(activeClass($currentPage, 'services')); ?>" href="<?php echo e(appUrl('services')); ?>">Dịch vụ</a>
             <a class="<?php echo e(activeClass($currentPage, 'pricing')); ?>" href="<?php echo e(appUrl('pricing')); ?>">Bảng giá</a>
             <a class="<?php echo e(activeClass($currentPage, 'blog')); ?>" href="<?php echo e(appUrl('blog')); ?>">Tin tức</a>
         </nav>
-        <a class="btn btn-small" href="<?php echo e(appUrl('contact')); ?>">Đặt lịch</a>
     </div>
 </header>

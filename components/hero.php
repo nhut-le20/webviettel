@@ -2,10 +2,11 @@
     <div class="container hero-grid">
         <div class="hero-copy reveal">
             <p class="eyebrow">Nền tảng công nghệ cho doanh nghiệp Việt Nam</p>
-            <h1>Giải pháp chuyển đổi số toàn diện</h1>
+            <h1>Giải pháp chuyển đổi số toàn diện cho doanh nghiệp</h1>
             <p>Đồng bộ hóa đơn điện tử, chữ ký số, hợp đồng điện tử và các ứng dụng quản trị trên một hệ sinh thái bảo mật, dễ triển khai, sẵn sàng mở rộng.</p>
             <div class="hero-actions">
-                <a class="btn" href="<?php echo e(appUrl('contact')); ?>">Đặt lịch tư vấn</a>
+                <a class="btn" href="<?php echo e(appUrl('contact')); ?>">Dùng thử miễn phí</a>
+                <a class="btn btn-secondary" href="<?php echo e(appUrl('contact')); ?>">Liên hệ ngay</a>
             </div>
             <div class="hero-trust">
                 <span>ISO-ready</span>
