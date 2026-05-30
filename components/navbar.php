@@ -1,26 +1,36 @@
 <?php if (!isset($currentPage)) { $currentPage = ''; } ?>
-<header class="site-header" data-navbar>
-    <div class="container nav-wrap">
-        <a class="brand-logo" href="<?php echo e(appUrl()); ?>">
-            <img
-                class="brand-mark"
-                src="<?php echo e(asset('images/logo-viettel.png')); ?>"
-                alt="Viettel"
-                width="100"
-                height="40"
-            >
-            <span class="brand-label">Dịch vụ giải pháp</span>
+<nav class="navbar navbar-expand-lg navbar-custom shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-white fw-bold" href="<?php echo appUrl(); ?>">
+            Viettel <span class="text-accent">Digital</span>
         </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
-            <span class="sr-only">Mở menu</span>
-            <span></span><span></span><span></span>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Mở menu">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Điều hướng chính" data-nav-menu>
-            <a class="<?php echo e(activeClass($currentPage, 'home')); ?>" href="<?php echo e(appUrl()); ?>">Trang chủ</a>
-            <a href="<?php echo e(appUrl('#solutions')); ?>">Giải pháp</a>
-            <a class="<?php echo e(activeClass($currentPage, 'services')); ?>" href="<?php echo e(appUrl('services')); ?>">Dịch vụ</a>
-            <a class="<?php echo e(activeClass($currentPage, 'pricing')); ?>" href="<?php echo e(appUrl('pricing')); ?>">Bảng giá</a>
-            <a class="<?php echo e(activeClass($currentPage, 'blog')); ?>" href="<?php echo e(appUrl('blog')); ?>">Tin tức</a>
-        </nav>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                <li class="nav-item">
+                    <a class="nav-link <?php echo e(activeClass($currentPage, 'home')); ?>" href="<?php echo appUrl(); ?>">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo appUrl('#solutions'); ?>">Giải pháp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo e(activeClass($currentPage, 'services')); ?>" href="<?php echo appUrl('services'); ?>">Dịch vụ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo e(activeClass($currentPage, 'blog')); ?>" href="<?php echo appUrl('blog'); ?>">Tin tức</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo appUrl('contact'); ?>">Liên hệ</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center ms-lg-3">
+                <a class="btn btn-tech btn-lg px-4" href="<?php echo appUrl('contact'); ?>">Tư vấn ngay</a>
+            </div>
+        </div>
     </div>
-</header>
+</nav>

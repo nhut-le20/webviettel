@@ -1,15 +1,31 @@
 <?php
 
 require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../includes/session.php';
 
 $pdo = getDatabaseConnection();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fullname = trim((string)($_POST['fullname'] ?? $_POST['name'] ?? ''));
-    $email = trim((string)($_POST['email'] ?? ''));
-    $phone = trim((string)($_POST['phone'] ?? ''));
-    $service = trim((string)($_POST['service'] ?? ''));
-    $message = trim((string)($_POST['message'] ?? ''));
+    if (!verifyCsrfToken($_POST['csrf_token'] ?? '')) {
+        error_log('save_contact.php: CSRF verification failed from ' . ($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
+        http_response_code(403);
+        die('Yêu cầu không hợp lệ.');
+    }
+
+    $fullname = strip_tags(trim((string)($_POST['fullname'] ?? $_POST['name'] ?? '')));
+    $fullname = preg_replace('/\s+/', ' ', $fullname);
+
+    $email = filter_var(trim((string)($_POST['email'] ?? '')), FILTER_SANITIZE_EMAIL);
+    $email = filter_var($email, FILTER_VALIDATE_EMAIL) ? $email : '';
+
+    $phone = strip_tags(trim((string)($_POST['phone'] ?? '')));
+    $phone = preg_replace('/\s+/', ' ', $phone);
+
+    $service = strip_tags(trim((string)($_POST['service'] ?? '')));
+    $service = preg_replace('/\s+/', ' ', $service);
+
+    $message = strip_tags(trim((string)($_POST['message'] ?? '')));
+    $message = preg_replace('/\s+/', ' ', $message);
 
     // Nếu DB đang dùng schema theo form site: (name, phone, service, message)
     // thì email không bắt buộc.
@@ -19,8 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     try {
-        $sql = "INSERT INTO contacts (name, phone, service, message)
-                VALUES (:name, :phone, :service, :message)";
+        $sql = "INSERT INTO contacts (name, phone, service, message)\n                VALUES (:name, :phone, :service, :message)";
 
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -33,14 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $source = trim((string)($_POST['source'] ?? ''));
 
         if ($source === 'contact') {
-            // quay về trang khách và hiển thị thông báo đăng ký thành công
             header('Location: /webviettel-main/contact?success=1');
         } else {
             header('Location: /webviettel-main/admin/customers.php');
         }
         exit;
     } catch (PDOException $e) {
-        echo 'Lỗi: ' . $e->getMessage();
+        error_log('save_contact.php: database insert failed - ' . $e->getMessage());
+        echo 'Đã xảy ra lỗi máy chủ. Vui lòng thử lại sau.';
     }
 }
 

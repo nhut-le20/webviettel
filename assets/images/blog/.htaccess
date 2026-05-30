@@ -1,0 +1,21 @@
+# Prevent CGI execution
+Options -ExecCGI
+
+# Deny access to known script extensions
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Remove common script handlers to avoid accidental execution
+RemoveHandler .php .phtml .php3 .php4 .php5
+
+# Serve as static files by default
+<IfModule mod_mime.c>
+    SetHandler default-handler
+</IfModule>
